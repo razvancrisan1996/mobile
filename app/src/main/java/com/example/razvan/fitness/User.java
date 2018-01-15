@@ -1,25 +1,71 @@
 package com.example.razvan.fitness;
 
+import java.util.List;
+
 /**
  * Created by Razvan on 11/19/2017.
  */
 
 public class User {
+    private int id;
     private String emailAddress, password, name;
     private int weight, age;
     private Genre genre;
+    private UType uType;
+    private List<Workout> workouts;
 
     public enum Genre{
         MALE, FEMALE
     }
 
-    public User(String emailAddress, String password, String name, int weight, int age, Genre genre) {
+    public enum UType{
+        ADMIN, USER
+    }
+    public User(int id,String emailAddress, String password, String name, int weight, int age, Genre genre, List<Workout> workouts) {
+        this.id = id;
         this.emailAddress = emailAddress;
         this.password = password;
         this.name = name;
         this.weight = weight;
         this.age = age;
         this.genre = genre;
+        this.workouts = workouts;
+    }
+
+    public User(String emailAddress,int age,int weight){
+        this.emailAddress = emailAddress;
+        this.age = age;
+        this.weight = weight;
+    }
+    public User(int id,String emailAddress,int age,int weight){
+        this.id = id;
+        this.emailAddress = emailAddress;
+        this.age = age;
+        this.weight = weight;
+    }
+
+    public UType getuType() {
+        return uType;
+    }
+
+    public void setuType(UType uType) {
+        this.uType = uType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Workout> getWorkouts() {
+        return workouts;
+    }
+
+    public void setWorkouts(List<Workout> workouts) {
+        this.workouts = workouts;
     }
 
     public String getEmailAddress() {

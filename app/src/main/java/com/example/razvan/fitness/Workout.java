@@ -5,7 +5,8 @@ package com.example.razvan.fitness;
  */
 
 public class Workout {
-    private int id;
+    private int idWorkout;
+    private int idUser;
     private String description;
     private int duration;
     private Level difficulty;
@@ -20,19 +21,35 @@ public class Workout {
         this.difficulty = difficulty;
     }
 
-    public Workout(int id, String description, int duration, Level difficulty) {
-        this.id = id;
+
+
+    public Workout(int idUser, String description, int duration, Level difficulty) {
+        this.idUser = idUser;
         this.description = description;
         this.duration = duration;
         this.difficulty = difficulty;
     }
+    public Workout(int idWorkout,int idUser, String description, int duration, Level difficulty) {
+        this.idWorkout = idWorkout;
+        this.idUser = idUser;
+        this.description = description;
+        this.duration = duration;
+        this.difficulty = difficulty;
+    }
+    public int getIdWorkout() {
+        return idWorkout;
+    }
+
+    public void setIdWorkout(int idWorkout) {
+        this.idWorkout = idWorkout;
+    }
 
     public int getId() {
-        return id;
+        return idUser;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idUser = id;
     }
 
     public String getDescription() {
@@ -75,7 +92,7 @@ public class Workout {
 
         Workout workout6 = (Workout) o;
 
-        if (id != workout6.id) return false;
+        if (idUser != workout6.idUser) return false;
         if (duration != workout6.duration) return false;
         if (!description.equals(workout6.description)) return false;
         return difficulty == workout6.difficulty;
@@ -83,7 +100,7 @@ public class Workout {
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = idUser;
         result = 31 * result + description.hashCode();
         result = 31 * result + duration;
         result = 31 * result + difficulty.hashCode();

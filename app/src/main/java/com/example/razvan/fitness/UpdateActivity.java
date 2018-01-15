@@ -10,11 +10,11 @@ import android.widget.EditText;
 
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
-public class UpdateActivity extends ListViewActivity {
+public class UpdateActivity extends AppCompatActivity {
 
     EditText tvDuration;
     MaterialBetterSpinner tvDifficulty;
-    String duration, difficulty, position,id;
+    String duration, difficulty, position,idUser,idWorkout,description;
     Button btnUpdate;
     String [] LevelUpdate = {"LOW", "LOW_MODERATE", "MODERATE", "MODERATE_HIGH", "HIGH"};
 
@@ -35,7 +35,10 @@ public class UpdateActivity extends ListViewActivity {
             duration = intent.getStringExtra("duration");
             difficulty = intent.getStringExtra("difficulty");
             position = intent.getStringExtra("position");
-            id = intent.getStringExtra("id");
+            idUser = intent.getStringExtra("idUser");
+            idWorkout = intent.getStringExtra("idWorkout");
+            description = intent.getStringExtra("description");
+
 
         }
         tvDifficulty.setText(difficulty);
@@ -49,6 +52,9 @@ public class UpdateActivity extends ListViewActivity {
                 intent.putExtra("duration",tvDuration.getText().toString());
                 intent.putExtra("difficulty", tvDifficulty.getText().toString());
                 intent.putExtra("position", position);
+                intent.putExtra("idUser", idUser);
+                intent.putExtra("idWorkout",idWorkout);
+                intent.putExtra("description",description);
                 setResult(RESULT_OK,intent);
                 finish();
             }

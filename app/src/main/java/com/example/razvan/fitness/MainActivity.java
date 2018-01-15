@@ -17,13 +17,41 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity  {
 
-    //UserLocalStore userLocalStore = new UserLocalStore(this);
-    Intent intent=getIntent();
+
+    Intent intent;
+    String user_id,uType,email,age,weight;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        intent = getIntent();
+        user_id = intent.getStringExtra("user_id");
+        uType = intent.getStringExtra("utype");
+        email = intent.getStringExtra("email");
+        weight = intent.getStringExtra("weight");
+        age = intent.getStringExtra("age");
+
+        Button bListUser = (Button) findViewById(R.id.bUserList);
+
+        if (uType.equals("USER")){
+            bListUser.setVisibility(View.INVISIBLE);
+        }
+        else{
+            bListUser.setVisibility(View.VISIBLE);
+        }
         Button bLogOut = (Button) findViewById(R.id.logOutButton);
+        bLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentLogout = new Intent(MainActivity.this, Login.class);
+                MainActivity.this.startActivity(intentLogout);
+                finish();
+            }
+        });
+
 
 
     }
@@ -31,6 +59,8 @@ public class MainActivity extends AppCompatActivity  {
         Intent intent = null, chooser=null;
         if(view.getId() == R.id.but1){
             intent = new Intent(MainActivity.this,ListViewActivity.class);
+            intent.putExtra("user_id",user_id);
+            intent.putExtra("utype", uType);
             startActivity(intent);
         }
         if(view.getId() == R.id.sendEmail)
@@ -45,28 +75,15 @@ public class MainActivity extends AppCompatActivity  {
             chooser = intent.createChooser(intent,"Send Email");
             startActivityForResult(intent,0);
         }
+        if(view.getId() == R.id.bUserList)
+        {
+            intent = new Intent(MainActivity.this, UsersList.class);
+            intent.putExtra("email",email);
+            intent.putExtra("age",age);
+            intent.putExtra("weight",weight);
+            intent.putExtra("user_id",user_id);
+            startActivity(intent);
+        }
     }
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if (authenticate()==true){
-//
-//        }
-//    }
-//
-//    private boolean authenticate(){
-//        return userLocalStore.getUserLoggedIn();
-//    }
-//
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()){
-//            case R.id.logOutButton:
-//                userLocalStore.clearUserData();
-//                userLocalStore.setUserLoggedIn(false);
-//
-//                startActivity(new Intent(this, Login.class));
-//                break;
-//        }
-//    }
+
 }

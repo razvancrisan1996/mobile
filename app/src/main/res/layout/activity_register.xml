@@ -4,80 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context="com.example.razvan.fitness.Login"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context="com.example.razvan.fitness.Register">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Name"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Age"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/etAge"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Weight"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/etWeight"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Genre"
-        android:layout_height="wrap_content" />
-    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-        android:id="@+id/tvGenre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Genre" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Email Address"
-        android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
-        android:inputType="textEmailAddress"
-        android:layout_height="wrap_content" />
+        android:layout_width="343dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Email"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"/>
+
     <EditText
         android:id="@+id/etPassword"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
         android:inputType="textPassword"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:hint="Password"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="84dp" />
 
 
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Weight"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Age"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="258dp" />
+
+    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+        android:id="@+id/tvGenre"
+        android:layout_width="344dp"
+        android:layout_height="47dp"
+        android:dropDownWidth="match_parent"
+        android:hint="Genre"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="316dp" />
 
     <Button
-        android:id="@+id/bRegister"
+        android:id="@+id/btRegister"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
         android:text="Register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="381dp" />
+
 
 </LinearLayout>

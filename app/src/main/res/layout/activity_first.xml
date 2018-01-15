@@ -3,44 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/but1"
-        android:layout_width="146dp"
-        android:layout_height="107dp"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:onClick="process"
         android:text="Workouts"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendEmail"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toTopOf="@+id/logOutButton"
+        app:layout_constraintEnd_toEndOf="@+id/logOutButton"
+        app:layout_constraintStart_toStartOf="@+id/logOutButton"
+        app:layout_constraintTop_toBottomOf="@+id/sendEmail" />
 
     <Button
         android:id="@+id/sendEmail"
-        android:layout_width="151dp"
-        android:layout_height="101dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="292dp"
         android:onClick="process"
         android:text="Send Email"
-        app:layout_constraintBottom_toTopOf="@+id/logOutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/logOutButton"
+        app:layout_constraintStart_toStartOf="@+id/but1"
+        app:layout_constraintTop_toBottomOf="@+id/bUserList" />
 
     <Button
         android:id="@+id/logOutButton"
-        android:layout_width="0dp"
-        android:layout_height="58dp"
+        android:layout_width="151dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="117dp"
+        android:layout_marginEnd="105dp"
         android:text="LogOut"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sendEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/but1"
-        app:layout_constraintTop_toBottomOf="@+id/sendEmail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but1" />
+
+    <Button
+        android:id="@+id/bUserList"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="106dp"
+        android:onClick="process"
+        android:text="List of users"
+        app:layout_constraintBottom_toTopOf="@+id/sendEmail"
+        app:layout_constraintStart_toStartOf="@+id/sendEmail"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
